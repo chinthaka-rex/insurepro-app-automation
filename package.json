@@ -1,0 +1,23 @@
+{
+  "name": "insurepro-automation",
+  "version": "1.0.0",
+  "description": "Cucumber Webdriverio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chinthaka Withanage",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/register": "^7.17.7",
+    "@wdio/allure-reporter": "^7.20.0",
+    "@wdio/cli": "^7.20.2",
+    "@wdio/cucumber-framework": "^7.20.2",
+    "@wdio/local-runner": "^7.20.2",
+    "@wdio/spec-reporter": "^7.20.0",
+    "chromedriver": "^102.0.0",
+    "wdio-chromedriver-service": "^7.3.2"
+  }
+}
