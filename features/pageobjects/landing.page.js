@@ -1,6 +1,5 @@
 class LandingPage{
     //WebElement Locators
-
     get languageLink(){
         return $("//*[@id=\"footer\"]/div/div/button");
     }
@@ -8,7 +7,6 @@ class LandingPage{
     get quoteButton(){
         return $("//*[@id=\"footer\"]/div/button");
     }
-
 
     //Actions
     openLandingPage(){
