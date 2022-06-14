@@ -1,3 +1,5 @@
+import { expect } from "chai";
+
 class LandingPage{
     //WebElement Locators
     get languageLink(){
@@ -10,14 +12,14 @@ class LandingPage{
 
     //Actions
     openLandingPage(){
-        browser.url("https://app-new-flow.qa.insurepro.com");
+        browser.url("https://app-new-flow.qa.insurepro.com/");
         console.log("Navigating to the InsurePro Landing page.")
-
-        const pTitle = browser.getTitle();
     }
 
-    verifyPageHeading = async() => {
-        
+    async getPageTitle(){
+        const pTitle = await browser.getTitle();
+        console.log("The page title is : ",pTitle);
     }
+
 }
 export default new LandingPage();
