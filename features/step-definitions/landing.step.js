@@ -1,6 +1,12 @@
 import { Given,When,Then } from "@wdio/cucumber-framework";
-import landingPage from '../pageobjects/landing.page'
+import LandingPage from '../pageobjects/landing.page'
 
 Given(/^user is on insurepro landing page$/,async () => {
-    landingPage.openLandingPage();
+    LandingPage.openLandingPage();
+})
+
+When(/^user gets the title of the insurepro landing page$/,async () => {
+    // await expect(LandingPage.languageLink).toBePresent();
+    // await expect(LandingPage.quoteButton).toBePresent();
+    await LandingPage.getPageTitle();
 })
