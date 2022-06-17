@@ -1,9 +1,7 @@
-import { expect } from "chai";
-
 class LandingPage{
     //WebElement Locators
     get languageLink(){
-        return $("//*[@id=\"footer\"]/div/div/button");
+        return browser.$("//*[@id=\"footer\"]/div/div/button").getText;
     }
 
     get quoteButton(){
@@ -19,7 +17,11 @@ class LandingPage{
     async getPageTitle(){
         const pTitle = await browser.getTitle();
         console.log("The page title is : ",pTitle);
+        return pTitle;
     }
 
+    async getLanguageLinkText(){
+        console.log(this.languageLink.getElementText,"----------------------------");
+    }
 }
 export default new LandingPage();
