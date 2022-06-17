@@ -18,7 +18,7 @@ When(/^insurepro landing page title should be \"([^\"]*)\"$/, async (insurepro) 
 When(/^insurepro landing page should contain \"([^\"]*)\" link$/, async (continuarenespaol) => {
     //await expect(LandingPage.languageLink).toBePresent();
     //console.log("YYY : ",await LandingPage.languageLink).map(elem => elem.getText());
-    LandingPage.getLanguageLinkText();
+    LandingPage.getLanguageLinkText;
     console.log("yyy : ",continuarenespaol);
 });
 
