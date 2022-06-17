@@ -1,9 +1,9 @@
 class LandingPage{
     //WebElement Locators
     get languageLink(){
-        return browser.$("//*[@id=\"footer\"]/div/div/button").getText;
+        return $('#footer > div > div > button*=Continuar en español');
     }
-
+    
     get quoteButton(){
         return $("//*[@id=\"footer\"]/div/button");
     }
@@ -21,7 +21,8 @@ class LandingPage{
     }
 
     async getLanguageLinkText(){
-        console.log(this.languageLink.getElementText,"----------------------------");
+        const link = await $('//*[@id="footer"]/div/div/button')
+        console.log(await link.getText(),"-----------------------")
     }
 }
 export default new LandingPage();
