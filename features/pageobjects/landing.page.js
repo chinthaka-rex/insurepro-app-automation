@@ -1,17 +1,13 @@
 class LandingPage{
     //WebElement Locators
-    get languageLink(){
-        return $('#footer > div > div > button*=Continuar en español');
-    }
+    get languageLink(){ return $("//*[@id='footer']/div/div/button") }
     
-    get quoteButton(){
-        return $("//*[@id=\"footer\"]/div/button");
-    }
+    get quoteButton(){ return $("//*[@id='footer']/div/button") }
 
     //Actions
     openLandingPage(){
         browser.url("https://app-new-flow.qa.insurepro.com/");
-        console.log("Navigating to the InsurePro Landing page.")
+        console.log("Navigating to the InsurePro Landing page.");
     }
 
     async getPageTitle(){
@@ -21,8 +17,19 @@ class LandingPage{
     }
 
     async getLanguageLinkText(){
-        const link = await $('//*[@id="footer"]/div/div/button')
-        console.log(await link.getText(),"-----------------------")
+        const text = this.languageLink;
+        let txt = text.getText();
+        return txt;
+    }
+
+    async getQuoteButtonText(){
+        const text = this.quoteButton;
+        let txt = text.getText();
+        return txt;
+    }
+
+    async clickOnTheQuoteBtn(){
+        await this.quoteButton.click();
     }
 }
 export default new LandingPage();
