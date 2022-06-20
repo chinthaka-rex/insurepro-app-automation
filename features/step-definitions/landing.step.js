@@ -16,14 +16,17 @@ When(/^insurepro landing page title should be \"([^\"]*)\"$/, async (insurepro) 
 });
 
 When(/^insurepro landing page should contain \"([^\"]*)\" link$/, async (continuarenespaol) => {
-    //await expect(LandingPage.languageLink).toBePresent();
-    //console.log("YYY : ",await LandingPage.languageLink).map(elem => elem.getText());
-    LandingPage.getLanguageLinkText;
-    console.log("yyy : ",continuarenespaol);
+    expect(await LandingPage.getLanguageLinkText()).toEqual(continuarenespaol);
 });
 
 Then(/^Start to type your Then step here insurepro landing page should contain \"([^\"]*)\" button$/, async (getaquote) => {
-    // await expect(LandingPage.quoteButton).toBePresent();
-    // await expect(LandingPage.quoteButton).getText();
-    console.log("zzz : ",getaquote);
+    expect(await LandingPage.getQuoteButtonText()).toEqual(getaquote);
+});
+
+When(/^click on the Get A Quote button$/, async () => {
+    await LandingPage.clickOnTheQuoteBtn();
+});
+
+Then(/^user should navigate to the next page and title should be \"([^\"]*)\"$/, async (state) => {
+    expect(await LandingPage.getPageTitle()).toEqual(state);
 });
