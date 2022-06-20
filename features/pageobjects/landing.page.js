@@ -7,7 +7,6 @@ class LandingPage{
     //Actions
     openLandingPage(){
         browser.url("https://app-new-flow.qa.insurepro.com/");
-        console.log("Navigating to the InsurePro Landing page.");
     }
 
     async getPageTitle(){
