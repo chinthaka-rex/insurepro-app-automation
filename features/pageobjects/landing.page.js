@@ -1,12 +1,11 @@
 class LandingPage{
     //WebElement Locators
     get languageLink(){ return $("//*[@id='footer']/div/div/button") }
-    
     get quoteButton(){ return $("//*[@id='footer']/div/button") }
 
     //Actions
-    openLandingPage(){
-        browser.url("https://app-new-flow.qa.insurepro.com/");
+    async openLandingPage(){
+            await browser.url("https://app-new-flow.qa.insurepro.com/");
     }
 
     async getPageTitle(){
@@ -29,6 +28,11 @@ class LandingPage{
 
     async clickOnTheQuoteBtn(){
         await this.quoteButton.click();
+    }
+
+    async loadStatePage(){
+        await this.openLandingPage();
+        await this.clickOnTheQuoteBtn();
     }
 }
 export default new LandingPage();

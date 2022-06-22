@@ -12,7 +12,7 @@ When(/^user gets the title of the insurepro landing page$/, async () => {
 });
 
 When(/^insurepro landing page title should be \"([^\"]*)\"$/, async (insurepro) => {
-    expect(insurepro).toEqual(expPageTitle);
+    expect(expPageTitle).toEqual(insurepro);
 });
 
 When(/^insurepro landing page should contain \"([^\"]*)\" link$/, async (continuarenespaol) => {
