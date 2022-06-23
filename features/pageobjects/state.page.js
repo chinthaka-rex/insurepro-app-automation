@@ -38,5 +38,12 @@ class StatePage{
     async clickOnTheConBtn(){
         await this.conBtn.click();
     }
+
+    async loadJobsPage(){
+       await LandingPage.loadStatePage()
+       await browser.pause(300)
+       await this.selectState('florida')
+       await this.clickOnTheConBtn()
+    }
 }
 export default new StatePage();
