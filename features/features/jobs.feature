@@ -9,7 +9,7 @@ Feature: Profession page features
     When insurepro profession page should contain "Search for Profession" dropdown
     When insurepro profession page should contain "Continue" button
 
-  #Scenario: Verify the profession dropdown and the Continue button on the profession page
-  #  Then select "House Cleaning" as the profession
-  #  When click on the Continue button on the insurepro profession page
-  #  Then user should navigate from profession page to the next page and title should be "InsurePro - Why are you looking for insurance?"
+  Scenario: Verify the profession dropdown and the Continue button on the profession page
+    Then select "House Cleaning" as the profession
+    When click on the Continue button on the insurepro profession page
+    Then user should navigate from profession page to the next page and title should be "InsurePro - Why are you looking for insurance?"

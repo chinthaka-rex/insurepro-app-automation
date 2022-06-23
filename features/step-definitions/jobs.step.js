@@ -16,21 +16,21 @@ When(/^insurepro profession page title should be \"([^\"]*)\"$/, async (insurepr
 });
 
 When(/^insurepro profession page should contain \"([^\"]*)\" dropdown$/, async (searchforprofession) => {
-    
+    expect(await JobsPage.getSearchForProfText()).toEqual(searchforprofession);
 });
 
 When(/^insurepro profession page should contain \"([^\"]*)\" button$/, async (conBtn) => {
-    
+    expect(await JobsPage.getConBtnText()).toEqual(conBtn);
 });
 
-Then(/^select \"([^\"]*)\" as the profession$/, async (housecleaning) => {
-    
+Then(/^select \"([^\"]*)\" as the profession$/, async (jType) => {
+    await JobsPage.selectJob(jType)
 });
 
 When(/^click on the Continue button on the insurepro profession page$/, async () => {
-    
+    await JobsPage.clickOnTheConBtn()
 });
 
 Then(/^user should navigate from profession page to the next page and title should be \"([^\"]*)\"$/, async (insureprowhyareyoulookingforinsurance) => {
-    
+    expect(await JobsPage.getPageTitle()).toEqual(insureprowhyareyoulookingforinsurance);
 });
