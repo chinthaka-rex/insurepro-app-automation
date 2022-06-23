@@ -21,7 +21,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './features/features/*.feature'
+        './features/features/jobs.feature'
     ],
     // Patterns to exclude.
     exclude: [
