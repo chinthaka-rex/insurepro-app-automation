@@ -25,6 +25,7 @@ class StatePage{
     }
 
     async getConBtnText(){
+        await browser.pause(300)
         const text = this.conBtn;
         let txt = text.getText();
         return txt;
