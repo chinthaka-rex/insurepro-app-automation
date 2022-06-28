@@ -19,7 +19,7 @@ When(/^insurepro landing page should contain \"([^\"]*)\" link$/, async (continu
     expect(await LandingPage.getLanguageLinkText()).toEqual(continuarenespaol);
 });
 
-Then(/^Start to type your Then step here insurepro landing page should contain \"([^\"]*)\" button$/, async (getaquote) => {
+Then(/^insurepro landing page should contain \"([^\"]*)\" button$/, async (getaquote) => {
     expect(await LandingPage.getQuoteButtonText()).toEqual(getaquote);
 });
 

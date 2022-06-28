@@ -21,7 +21,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './features/features/*.feature'
+        './features/features/whyLookingForInsurance.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -132,8 +132,9 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec',['allure', {outputDir: 'allure-results'}]],
-
+    reporters: ['spec',
+    ['allure', {outputDir: 'allure-results'}],
+    ['cucumberjs-json', {jsonFolder: './jreport/',language: 'en'}]],
 
     //
     // If you are using Cucumber you need to specify the location of your step definitions.
@@ -205,8 +206,10 @@ exports.config = {
      * @param {Array.<String>} specs List of spec file paths that are to be run
      * @param {String} cid worker id (e.g. 0-0)
      */
-    // beforeSession: function (config, capabilities, specs, cid) {
-    // },
+    beforeSession: function (config, capabilities, specs, cid) {
+        const fsExtra = require('fs-extra')
+        fsExtra.emptyDirSync('./jreport/')
+    },
     /**
      * Gets executed before test execution begins. At this point you can access to all global
      * variables like `browser`. It is the perfect place to define custom commands.
